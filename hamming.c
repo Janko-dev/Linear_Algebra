@@ -34,3 +34,23 @@ Matrix* create_H_matrix(Matrix* G, int size_data, int size_par){
     return h_mat;
 }
 
+static inline int mod2(int n){
+    return n%2;
+}
+
+uint8_t create_byte(Matrix* G, Vector* vec){
+    Vector* res = map_vector(mul_matrix_vector(G, vec), mod2);
+    print_vector(res);
+    uint8_t byte = 0;
+    for (int i = 0; i < res->n; i++){
+        byte |= res->data[i]<<(i+1);
+    }
+    return byte;
+}
+
+Vector* check_parity(uint8_t byte, Matrix* H){
+    Vector* res = create_vector(7);
+    for (int i = 0; i < 7; i++) res->data[i] = (byte>>(i+1))&1;
+    return map_vector(mul_matrix_vector(H, res), mod2);
+}
+
