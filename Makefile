@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g -Wextra -lm
-IN = main.c
+IN = main.c la.c hamming.c
 OUT = -o out
 
 default:
