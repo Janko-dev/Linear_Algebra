@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <math.h>
 #include "la.h"
 
 Matrix* create_matrix(int m, int n){
@@ -18,6 +22,19 @@ Vector* create_vector(int n){
     return result;
 }
 
+void free_matrix(Matrix* matrix){
+    for (int i = 0; i < matrix->m; i++){
+        free(matrix->data[i]);
+    }
+    free(matrix->data);
+    free(matrix);
+}
+
+void free_vector(Vector* vector){
+    free(vector->data);
+    free(vector);
+}
+
 void print_matrix(Matrix* matrix){
     for (int i = 0; i < matrix->m; i++){
         for (int j = 0; j < matrix->n; j++){
@@ -35,20 +52,7 @@ void print_vector(Vector* vector){
     printf("\n");
 }
 
-void free_matrix(Matrix* matrix){
-    for (int i = 0; i < matrix->m; i++){
-        free(matrix->data[i]);
-    }
-    free(matrix->data);
-    free(matrix);
-}
-
-void free_vector(Vector* vector){
-    free(vector->data);
-    free(vector);
-}
-
-Vector* mul_matrix_vector(Matrix* mat, Vector* vec){
+Vector* prod_matrix_vector(Matrix* mat, Vector* vec){
     if (vec->n != mat->n){
         fprintf(stderr, "ERROR: Columns of matrix do not match rows of vector\n");
         exit(1);
@@ -86,7 +90,25 @@ void mul_vector_scalar(Vector* vec, int scalar){
     }
 }
 
-Vector* map_vector(Vector* vec, int(*f)(int)){
+Vector* apply_vector(Vector* vec, int(*f)(int)){
     for (int i = 0; i < vec->n; i++) vec->data[i] = f(vec->data[i]);
     return vec;
+}
+
+Matrix* apply_matrix(Matrix* mat, int(*f)(int)){
+    for (int i = 0; i < mat->m; i++) {
+        for (int j = 0; j < mat->n; j++) {
+            mat->data[i][j] = f(mat->data[i][j]);
+        }
+    }
+    return mat;
+}
+
+Matrix* populate_matrix_random(Matrix* mat){
+    for (int i = 0; i < mat->m; i++) {
+        for (int j = 0; j < mat->n; j++) {
+            mat->data[i][j] = rand() % 100;
+        }
+    }
+    return mat;
 }

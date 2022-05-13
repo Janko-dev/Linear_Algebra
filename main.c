@@ -1,36 +1,36 @@
-#include "hamming.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "la.h"
 
-
-
-int main(void){
-
-    int d_size = 4;
-    int p_size = 3;
-
-    Vector* vec = create_vector(d_size);
-    for (int i = 0; i < vec->n; i++) vec->data[i] = (i > 2) == 0 ? 0 : 1;
-
-    Matrix* G = create_G_matrix(d_size, p_size);
-    Matrix* H = create_H_matrix(G, d_size, p_size);
-    
-    uint8_t res = create_byte(G, vec);
-    for (int i = 0; i < 8; i++){
-        printf("%1d", (res>>i)&1 ? 1 : 0);
+long int convert(char* x){
+    long int total = 0;
+    while(*x != '\0'){
+        //printf("%c\n", *x);
+        if (*x < '0' || *x > '9'){
+            fprintf(stderr, "ERROR: Supply a whole number\n");
+            exit(1);
+        }
+        total = 10 * total + (*x - '0');
+        x++;
     }
-    printf("\n");
+    return total;
+}
 
-    res = res|(1<<1);
-    for (int i = 0; i < 8; i++){
-        printf("%1d", (res>>i)&1 ? 1 : 0);
+int main(int argc, char** argv){
+
+    if (argc != 3){
+        fprintf(stderr, "ERROR: Supply a whole number for the amount of rows and columns of the matrix.\n");
+        exit(1);
     }
-    printf("\n");
-    
-    Vector* parity = check_parity(res, H);
-    
 
-    free_matrix(G);
-    free_matrix(H);
-    // free_vector(res);
-    free_vector(vec);
+    int m = convert(argv[1]);
+    int n = convert(argv[2]);
+
+    printf("Matrix of size (%2d, %2d)\n---------------------\n", m, n);
+
+    Matrix* mat = create_matrix(m, n);
+    populate_matrix_random(mat);
+    print_matrix(mat);
+
     return 0;
 }

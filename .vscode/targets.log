@@ -10,13 +10,12 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 make.exe: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue May 10 21:06:37 2022
+# Make data base, printed on Fri May 13 17:05:53 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
- 
 # automatic
 ?F = $(notdir $?)
 # makefile
@@ -24,6 +23,7 @@ MAKEFLAGS = Rrqp
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
+ 
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
@@ -38,7 +38,7 @@ CURDIR := /c/Users/janba/C-dev/Linear_Algebra
 # default
 SHELL := /bin/sh
 # makefile (from `Makefile', line 3)
-IN = main.c
+IN = main.c la.c
 # environment
 WINDIR = C:\WINDOWS
 # environment
@@ -60,11 +60,11 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-50d37424-a41a-4219-abf4-c4febaaa377a-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-29fab101-c35e-4224-919d-a292a11a5aad-sock
 # environment
 VSCODE_CWD = C:\Users\janba\C-dev\Linear_Algebra
 # environment
-PATH = /c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/WINDOWS/System32/OpenSSH/:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Git/cmd:/c/Program Files/Docker/Docker/resources/bin:/c/ProgramData/DockerDesktop/version-bin:/c/Program Files/dotnet/:/c/Users/janba/AppData/Local/Microsoft/WindowsApps:/c/Users/janba/AppData/Local/Programs/Microsoft VS Code/bin:/usr/bin:/mingw/bin:/c/Users/janba/.dotnet/tools
+PATH = /c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/WINDOWS/System32/OpenSSH/:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Git/cmd:/c/Program Files/Docker/Docker/resources/bin:/c/ProgramData/DockerDesktop/version-bin:/c/Program Files/dotnet/:/c/Program Files/nodejs/:/c/Users/janba/AppData/Local/Microsoft/WindowsApps:/c/Users/janba/AppData/Local/Programs/Microsoft VS Code/bin:/usr/bin:/mingw/bin:/c/Users/janba/.dotnet/tools:/c/Users/janba/AppData/Roaming/npm
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
@@ -86,7 +86,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9164_TOFXLULVSKXMCBXK
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_19512_USUDCOSESKJESAZJ
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -104,7 +104,7 @@ PUBLIC = C:\Users\Public
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\janba\AppData\Roaming\Code\CachedData\57fd6d0195bb9b9d1b49f6da5db789060795de47
+VSCODE_CODE_CACHE_PATH = C:\Users\janba\AppData\Roaming\Code\CachedData\da15b6fd3ef856477bf6f4fb29ba1b7af717770d
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -148,7 +148,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\37406f71a663a7ded3962ec94234e7b6-1.67.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\37406f71a663a7ded3962ec94234e7b6-1.67.1-main-sock
 # environment
 HOMEPATH = \
 # environment
@@ -168,8 +168,6 @@ SYSTEMROOT = C:\WINDOWS
 # environment
 APPDATA = C:\Users\janba\AppData\Roaming
 # environment
-__COMPAT_LAYER = DetectorsAppHealth
-# environment
 TEMP = /tmp
 # environment
 COMSPEC = C:\WINDOWS\system32\cmd.exe
@@ -180,7 +178,6 @@ MAKEFILES :=
 # environment
 LC_ALL = C
 # makefile (from `Makefile', line 4)
- 
 OUT = -o out
 # automatic
 ^F = $(notdir $^)
@@ -203,11 +200,11 @@ PROCESSOR_LEVEL = 23
 # environment
 TERM = cygwin
 # environment
-VSCODE_PID = 9164
+VSCODE_PID = 19512
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-3AAR4JN
 # variable set hash-table stats:
-# Load=95/1024=9%, Rehash=0, Collisions=9/120=7%
+# Load=94/1024=9%, Rehash=0, Collisions=9/119=8%
 
 # Pattern-specific Variable Values
 
@@ -215,9 +212,9 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-3AAR4JN
 
 # Directories
 
-# . (device -13143, inode 781207): 6 files, no impossibilities.
+# . (device -13143, inode 781207): 12 files, no impossibilities.
 
-# 6 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -233,6 +230,7 @@ all:
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+ 
 
 # Not a target:
 .SUFFIXES:
@@ -243,7 +241,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-10 21:06:31
+#  Last modified 2022-05-13 17:05:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -255,7 +253,6 @@ default:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 7):
 	$(CC) $(IN) $(OUT) $(CFLAGS)
-	./out
 	
 
 # Not a target:
@@ -277,6 +274,6 @@ default:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue May 10 21:06:37 2022
+# Finished Make data base on Fri May 13 17:05:53 2022
 
  
