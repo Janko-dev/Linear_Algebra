@@ -18,19 +18,30 @@ long int convert(char* x){
 
 int main(int argc, char** argv){
 
-    if (argc != 3){
-        fprintf(stderr, "ERROR: Supply a whole number for the amount of rows and columns of the matrix.\n");
-        exit(1);
-    }
+    // if (argc != 3){
+    //     fprintf(stderr, "ERROR: Supply a whole number for the amount of rows and columns of the matrix.\n");
+    //     exit(1);
+    // }
 
-    int m = convert(argv[1]);
-    int n = convert(argv[2]);
+    // int m = convert(argv[1]);
+    // int n = convert(argv[2]);
 
-    printf("Matrix of size (%2d, %2d)\n---------------------\n", m, n);
+    // printf("Matrix of size (%2d, %2d)\n---------------------\n", m, n);
 
-    Matrix* mat = create_matrix(m, n);
-    populate_matrix_random(mat);
-    print_matrix(mat);
+    // Matrix* mat = create_matrix(m, n);
+    // populate_matrix_random(mat);
+    // print_matrix(mat);
+
+    Matrix_f* M = create_matrix_f(2, 2);
+    M->data[0][0] = 0.8f;
+    M->data[1][0] = 0.2f;
+    M->data[0][1] = 0.3f;
+    M->data[1][1] = 0.7f;
+    print_matrix_f(M);
+
+    Vector_f* x = create_vector_f(2);
+    x->data[0] = 800;
+    x->data[1] = 600;
 
     return 0;
 }
