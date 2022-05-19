@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g -Wextra -lm
-IN = main.c la.c
+IN = la.c main.c
 OUT = -o out
 
 default:

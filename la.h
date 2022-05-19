@@ -2,63 +2,55 @@
 #define _LA_
 
 typedef struct{
-    int** data;
+    float** data;
     int m;
     int n;
 } Matrix;
 
 typedef struct{
-    int* data;
+    float* data;
     int n;
 }Vector;
 
-typedef struct{
-    float** data;
-    int m;
-    int n;
-} Matrix_f;
+// Create matrix with m rows and n columns
+Matrix* create_mat(int m, int n);
+// Create vector of size n
+Vector* create_vec(int n);
 
-typedef struct{
-    float* data;
-    int n;
-}Vector_f;
+// Destroy matrix
+void free_mat(Matrix* matrix);
+// Destroy vector
+void free_vec(Vector* vector);
 
-// m rows and n columns
-Matrix* create_matrix(int m, int n);
-Vector* create_vector(int n);
+// Print matrix 
+void print_mat(Matrix* matrix);
+// Print vector
+void print_vec(Vector* vector);
 
-void free_matrix(Matrix* matrix);
-void free_vector(Vector* vector);
+// Product between matrix and vector
+Vector* prod_mat_vec(Matrix* mat, Vector* vec);
+// product between matrix A and matrix B
+Matrix* prod_mat(Matrix* A, Matrix* B);
 
-void print_matrix(Matrix* matrix);
-void print_vector(Vector* vector);
+// Scale vector by scalar value
+Vector* scale_vec(Vector* vec, float scalar);
+// Scale matrix by scalar value
+Matrix* scale_mat(Matrix* mat, float scalar);
 
-Vector* prod_matrix_vector(Matrix* mat, Vector* vec);
-Matrix* prod_matrix(Matrix* A, Matrix* B);
+// Apply function to members of vector by supplying a pointer to a function with 1 float argument and float return value
+Vector* apply_vec(Vector* vec, float(*func)(float));
+// Apply function to members of matrix by supplying a pointer to a function with 1 float argument and float return value
+Matrix* apply_mat(Matrix* vec, float(*func)(float));
 
-void mul_vector_scalar(Vector* vec, int scalar);
-Vector* apply_vector(Vector* vec, int(*f)(int));
-Matrix* apply_matrix(Matrix* vec, int(*f)(int));
+// Convert vector to matrix
+Matrix* vec_to_mat(Vector* vec);
+// Convert matrix to vector if possible
+Vector* mat_to_vec(Matrix* mat);
 
-Matrix* populate_matrix_random(Matrix* mat);
+// Randomize values of matrix between min and max 
+Matrix* randomize(Matrix* mat, float min, float max);
 
-// m rows and n columns
-Matrix_f* create_matrix_f(int m, int n);
-Vector_f* create_vector_f(int n);
-
-void free_matrix_f(Matrix_f* matrix);
-void free_vector_f(Vector_f* vector);
-
-void print_matrix_f(Matrix_f* matrix);
-void print_vector_f(Vector_f* vector);
-
-Vector_f* prod_matrix_vector_f(Matrix_f* mat, Vector_f* vec);
-Matrix_f* prod_matrix_f(Matrix_f* A, Matrix_f* B);
-
-void mul_vector_scalar_f(Vector_f* vec, float scalar);
-Vector_f* apply_vector_f(Vector_f* vec, float(*f)(float));
-Matrix_f* apply_matrix_f(Matrix_f* vec, float(*f)(float));
-
-Matrix_f* populate_matrix_random_f(Matrix_f* mat);
+// Transpose Matrix
+Matrix* transpose(Matrix* mat);
 
 #endif

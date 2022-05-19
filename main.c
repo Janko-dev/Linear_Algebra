@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "la.h"
+#include <time.h>
 
 long int convert(char* x){
     long int total = 0;
@@ -32,16 +33,13 @@ int main(int argc, char** argv){
     // populate_matrix_random(mat);
     // print_matrix(mat);
 
-    Matrix_f* M = create_matrix_f(2, 2);
-    M->data[0][0] = 0.8f;
-    M->data[1][0] = 0.2f;
-    M->data[0][1] = 0.3f;
-    M->data[1][1] = 0.7f;
-    print_matrix_f(M);
+    Matrix* m = create_mat(5, 3);
+    srand(time(0));
+    m = randomize(m, 0.f, 10.f);
+    print_mat(m);
+    print_mat(transpose(transpose(m)));
 
-    Vector_f* x = create_vector_f(2);
-    x->data[0] = 800;
-    x->data[1] = 600;
+    free_mat(m);
 
     return 0;
 }

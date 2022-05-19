@@ -4,26 +4,9 @@
 #include <math.h>
 #include "la.h"
 
-Matrix* create_matrix(int m, int n){
+// create
+Matrix* create_mat(int m, int n){
     Matrix* result = (Matrix*)malloc(sizeof(Matrix));
-    result->m = m;
-    result->n = n;
-    result->data = (int**)malloc(sizeof(int*)*result->m);
-    for (int i = 0; i < result->m; i++){
-        result->data[i] = (int*)calloc(result->n, sizeof(int));
-    }
-    return result;
-}
-
-Vector* create_vector(int n){
-    Vector* result = (Vector*)malloc(sizeof(Vector));
-    result->n = n;
-    result->data = (int*)calloc(result->n, sizeof(int));
-    return result;
-}
-
-Matrix_f* create_matrix_f(int m, int n){
-    Matrix_f* result = (Matrix_f*)malloc(sizeof(Matrix_f));
     result->m = m;
     result->n = n;
     result->data = (float**)malloc(sizeof(float*)*result->m);
@@ -33,14 +16,15 @@ Matrix_f* create_matrix_f(int m, int n){
     return result;
 }
 
-Vector_f* create_vector_f(int n){
-    Vector_f* result = (Vector_f*)malloc(sizeof(Vector_f));
+Vector* create_vec(int n){
+    Vector* result = (Vector*)malloc(sizeof(Vector));
     result->n = n;
     result->data = (float*)calloc(result->n, sizeof(float));
     return result;
 }
 
-void free_matrix(Matrix* matrix){
+// destroy
+void free_mat(Matrix* matrix){
     for (int i = 0; i < matrix->m; i++){
         free(matrix->data[i]);
     }
@@ -48,35 +32,13 @@ void free_matrix(Matrix* matrix){
     free(matrix);
 }
 
-void free_matrix_f(Matrix_f* matrix){
-    for (int i = 0; i < matrix->m; i++){
-        free(matrix->data[i]);
-    }
-    free(matrix->data);
-    free(matrix);
-}
-
-void free_vector(Vector* vector){
+void free_vec(Vector* vector){
     free(vector->data);
     free(vector);
 }
 
-void free_vector_f(Vector_f* vector){
-    free(vector->data);
-    free(vector);
-}
-
-void print_matrix(Matrix* matrix){
-    for (int i = 0; i < matrix->m; i++){
-        for (int j = 0; j < matrix->n; j++){
-            printf("%3d ", matrix->data[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
-
-void print_matrix_f(Matrix_f* matrix){
+// debug/print
+void print_mat(Matrix* matrix){
     for (int i = 0; i < matrix->m; i++){
         for (int j = 0; j < matrix->n; j++){
             printf("%9.4f ", matrix->data[i][j]);
@@ -86,27 +48,21 @@ void print_matrix_f(Matrix_f* matrix){
     printf("\n");
 }
 
-void print_vector(Vector* vector){
-    for (int i = 0; i < vector->n; i++){
-        printf("%3d\n", vector->data[i]);
-    }
-    printf("\n");
-}
-
-void print_vector_f(Vector_f* vector){
+void print_vec(Vector* vector){
     for (int i = 0; i < vector->n; i++){
         printf("%9.4f\n", vector->data[i]);
     }
     printf("\n");
 }
 
-Vector* prod_matrix_vector(Matrix* mat, Vector* vec){
+// matrix/vector product
+Vector* prod_mat_vec(Matrix* mat, Vector* vec){
     if (vec->n != mat->n){
         fprintf(stderr, "ERROR: Columns of matrix do not match rows of vector\n");
         exit(1);
     }
 
-    Vector* result = create_vector(mat->m);
+    Vector* result = create_vec(mat->m);
     for (int i = 0; i < mat->m; i++){
         for (int j = 0; j < mat->n; j++){
             result->data[i] += mat->data[i][j] * vec->data[j];
@@ -115,28 +71,13 @@ Vector* prod_matrix_vector(Matrix* mat, Vector* vec){
     return result;
 }
 
-Vector_f* prod_matrix_vector_f(Matrix_f* mat, Vector_f* vec){
-    if (vec->n != mat->n){
-        fprintf(stderr, "ERROR: Columns of matrix do not match rows of vector\n");
-        exit(1);
-    }
-
-    Vector_f* result = create_vector_f(mat->m);
-    for (int i = 0; i < mat->m; i++){
-        for (int j = 0; j < mat->n; j++){
-            result->data[i] += mat->data[i][j] * vec->data[j];
-        }
-    }
-    return result;
-}
-
-Matrix* prod_matrix(Matrix* A, Matrix* B){
+Matrix* prod_mat(Matrix* A, Matrix* B){
     if (B->m != A->n){
         fprintf(stderr, "ERROR: Columns of matrix A do not match rows of matrix B\n");
         exit(1);
     }
 
-    Matrix* result = create_matrix(A->m, B->n);
+    Matrix* result = create_mat(A->m, B->n);
     for (int i = 0; i < A->m; i++){
         for (int j = 0; j < B->n; j++){
             for (int k = 0; k < A->n; k++){
@@ -147,77 +88,78 @@ Matrix* prod_matrix(Matrix* A, Matrix* B){
     return result;
 }
 
-Matrix_f* prod_matrix_f(Matrix_f* A, Matrix_f* B){
-    if (B->m != A->n){
-        fprintf(stderr, "ERROR: Columns of matrix A do not match rows of matrix B\n");
+// scale matrix/vector
+Vector* scale_vec(Vector* vec, float scalar){
+    for (int i = 0; i < vec->n; i++) vec->data[i] *= scalar;
+    return vec;
+}
+
+Matrix* scale_mat(Matrix* mat, float scalar){
+    for (int i = 0; i < mat->m; i++) {
+        for (int j = 0; j < mat->n; j++) {
+            mat->data[i][j] *= scalar;
+        }
+    }
+    return mat;
+}
+
+// apply function to matrix/vector
+Vector* apply_vec(Vector* vec, float(*func)(float)){
+    for (int i = 0; i < vec->n; i++) vec->data[i] = func(vec->data[i]);
+    return vec;
+}
+
+Matrix* apply_mat(Matrix* mat, float(*func)(float)){
+    for (int i = 0; i < mat->m; i++) {
+        for (int j = 0; j < mat->n; j++) {
+            mat->data[i][j] = func(mat->data[i][j]);
+        }
+    }
+    return mat;
+}
+
+// Convert vector to matrix and matrix to vector
+Matrix* vec_to_mat(Vector* vec){
+    Matrix* res = create_mat(vec->n, 1);
+    for (int i = 0; i < res->m; i++){
+        res->data[i][0] = vec->data[i];
+    }
+    return res;
+}
+
+Vector* mat_to_vec(Matrix* mat){
+    if (mat->n != 1){
+        fprintf(stderr, "ERROR: Columns of matrix must be 1 to convert to vector\n");
         exit(1);
     }
-
-    Matrix_f* result = create_matrix_f(A->m, B->n);
-    for (int i = 0; i < A->m; i++){
-        for (int j = 0; j < B->n; j++){
-            for (int k = 0; k < A->n; k++){
-                result->data[i][j] += A->data[i][k] * B->data[k][j];    
-            }
-        }
+    Vector* res = create_vec(mat->m);
+    for (int i = 0; i < res->n; i++){
+        res->data[i] = mat->data[i][0];
     }
-    return result;
+    return res;
 }
 
-void mul_vector_scalar(Vector* vec, int scalar){
-    for (int i = 0; i < vec->n; i++){
-        vec->data[i] *= scalar;
+// Randomize matrix
+Matrix* randomize(Matrix* mat, float min, float max){
+    if (min > max){
+        fprintf(stderr, "ERROR: min %f must be smaller than max %f\n", min, max);
+        exit(1);
     }
-}
-
-void mul_vector_scalar_f(Vector_f* vec, float scalar){
-    for (int i = 0; i < vec->n; i++){
-        vec->data[i] *= scalar;
-    }
-}
-
-Vector* apply_vector(Vector* vec, int(*f)(int)){
-    for (int i = 0; i < vec->n; i++) vec->data[i] = f(vec->data[i]);
-    return vec;
-}
-
-Vector_f* apply_vector_f(Vector_f* vec, float(*f)(float)){
-    for (int i = 0; i < vec->n; i++) vec->data[i] = f(vec->data[i]);
-    return vec;
-}
-
-Matrix* apply_matrix(Matrix* mat, int(*f)(int)){
     for (int i = 0; i < mat->m; i++) {
         for (int j = 0; j < mat->n; j++) {
-            mat->data[i][j] = f(mat->data[i][j]);
+            mat->data[i][j] = (max-min) * ((float)rand()/(float)RAND_MAX) + min;
         }
     }
     return mat;
 }
 
-Matrix_f* apply_matrix_f(Matrix_f* mat, float(*f)(float)){
-    for (int i = 0; i < mat->m; i++) {
-        for (int j = 0; j < mat->n; j++) {
-            mat->data[i][j] = f(mat->data[i][j]);
-        }
+// Transpose matrix
+Matrix* transpose(Matrix* mat){
+    Matrix* res = create_mat(mat->n, mat->m);
+    for (int i = 0; i < res->m; i++){
+        for (int j = 0; j < res->n; j++){
+            res->data[i][j] = mat->data[j][i];
+        }    
     }
-    return mat;
-}
-
-Matrix* populate_matrix_random(Matrix* mat){
-    for (int i = 0; i < mat->m; i++) {
-        for (int j = 0; j < mat->n; j++) {
-            mat->data[i][j] = rand() % 100;
-        }
-    }
-    return mat;
-}
-
-Matrix_f* populate_matrix_random_f(Matrix_f* mat){
-    for (int i = 0; i < mat->m; i++) {
-        for (int j = 0; j < mat->n; j++) {
-            mat->data[i][j] = 100.0f * ((float)rand()/(float)RAND_MAX);
-        }
-    }
-    return mat;
+    return res;
 }
