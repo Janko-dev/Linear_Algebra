@@ -33,9 +33,9 @@ int main(int argc, char** argv){
     // populate_matrix_random(mat);
     // print_matrix(mat);
 
-    Matrix* m = create_mat(4, 4);
+    Matrix* m = create_mat(3, 4);
     // srand(time(0));
-    m = randomize(m, 0.f, 10.f);
+    m = randomize(m, 5.f, 20.f);
     // m->data[0][0] = 1.f;
     // m->data[0][1] = 2.f;
     // m->data[0][2] = 3.f;

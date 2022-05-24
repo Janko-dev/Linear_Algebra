@@ -53,4 +53,22 @@ Matrix* randomize(Matrix* mat, float min, float max);
 // Transpose Matrix
 Matrix* transpose(Matrix* mat);
 
+// Hard copy Matrix
+Matrix* copy_mat(Matrix* mat); 
+
+// Gaussian elimination of matrix to get row echelon form
+// x * *
+// 0 x *
+// 0 0 x
+Matrix* gaussian_row_echelon(Matrix* mat);
+
+// Solve gaussian eliminated row echelon form of matrix 
+Vector* solve_row_echelon(Matrix* mat);
+
+// Gaussian elimination of matrix to get inverse matrix
+Matrix* gaussian_jordan(Matrix* mat);
+
+
+
+
 #endif
