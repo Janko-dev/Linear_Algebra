@@ -33,13 +33,31 @@ int main(int argc, char** argv){
     // populate_matrix_random(mat);
     // print_matrix(mat);
 
-    Matrix* m = create_mat(5, 3);
-    srand(time(0));
+    Matrix* m = create_mat(4, 4);
+    // srand(time(0));
     m = randomize(m, 0.f, 10.f);
+    // m->data[0][0] = 1.f;
+    // m->data[0][1] = 2.f;
+    // m->data[0][2] = 3.f;
+    // m->data[1][0] = 4.f;
+    // m->data[1][1] = 5.f;
+    // m->data[1][2] = 6.f;
+    // m->data[2][0] = 7.f;
+    // m->data[2][1] = 8.f;
+    // m->data[2][2] = 10.f;
     print_mat(m);
-    print_mat(transpose(transpose(m)));
+    
+    for (int k = 0; k < m->n; k++){
+        for (int i = k+1; i < m->m; i++){
+            float val = m->data[i][k]/m->data[k][k];
+            for (int j = k; j < m->n; j++){
+                m->data[i][j] -= m->data[k][j] * val;
+            }
+        }
+    }
+    
+    
 
-    free_mat(m);
-
+    print_mat(m);
     return 0;
 }
