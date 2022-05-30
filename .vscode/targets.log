@@ -1,233 +1,221 @@
 make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
 
-# GNU Make 4.3
-# Built for Windows32
-# Copyright (C) 1988-2020 Free Software Foundation, Inc.
-# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-# This is free software: you are free to change and redistribute it.
-# There is NO WARRANTY, to the extent permitted by law.
+# This program built for i686-pc-msys
+ 
+make.exe: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Tue May 24 15:56:33 2022
+
+# Make data base, printed on Mon May 30 14:47:54 2022
 
 # Variables
 
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
-# environment
-SYSTEMDRIVE = C:
-# environment
-LC_ALL = C
-# environment
-USERPROFILE = C:\Users\baljanj
-# environment
-VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
-# environment
-LOCALAPPDATA = C:\Users\baljanj\AppData\Local
-# environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-83c34ddd-afe4-42c1-8a5a-80968a38b889-sock
-# environment
-VSCODE_CWD = D:\users\baljanj\OneDrive - Zuyd Hogeschool\Dev\Linear_Algebra
-# environment
-CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
-# environment
-SYSTEMROOT = C:\WINDOWS
-# environment
-PROCESSOR_LEVEL = 6
-# environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-# default
-MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
-# environment
-USERDNSDOMAIN = HSZUYD.AD
 # automatic
-@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
-# environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11024_TXQIAHSVSXGBQWIL
-# environment
-ONEDRIVECOMMERCIAL = d:\users\baljanj\OneDrive - Zuyd Hogeschool
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# default
-.VARIABLES := 
+<D = $(patsubst %/,%,$(dir $<))
 # automatic
-%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
-# automatic
-^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
-# environment
-VSCODE_LOG_STACK = false
-# automatic
-%F = $(notdir $%)
-# environment
-VSCODE_CODE_CACHE_PATH = C:\Users\baljanj\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
-# environment
-LANG = C
-# default
-.LOADED := 
-# environment
-TMP = C:\Users\baljanj\AppData\Local\Temp
-# default
-.INCLUDE_DIRS = .
-# environment
-PROCESSOR_ARCHITEW6432 = AMD64
+?F = $(notdir $?)
+ 
+# makefile (from `Makefile', line 1)
+SRC = examples/
 # makefile
-MAKEFLAGS = pqrR
+MAKEFLAGS = Rrqp
 # environment
-MINGW = C:\msys64\mingw64\bin
-# environment
-ONEDRIVE = d:\users\baljanj\OneDrive - Zuyd Hogeschool
-# makefile
-CURDIR := d:/users/baljanj/OneDrive - Zuyd Hogeschool/Dev/Linear_Algebra
-# environment
-VSCODE_PIPE_LOGGING = true
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+VSCODE_LOG_NATIVE = false
 # automatic
-*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
-# environment
-PROGRAMFILES = C:\Program Files (x86)
-# environment
-MFLAGS = -pqrR
-# default
-.SHELLFLAGS := -c
-# environment
-COMMONPROGRAMW6432 = C:\Program Files\Common Files
+?D = $(patsubst %/,%,$(dir $?))
 # automatic
-+D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST := Makefile
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+HOMEDRIVE = C:
 # automatic
 @F = $(notdir $@)
-# environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_PID = 11024
 # automatic
-?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
-# automatic
-*F = $(notdir $*)
-# automatic
-<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
-# environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := /c/Users/janba/C-dev/Linear_Algebra
 # default
-MAKE_HOST := Windows32
-# environment
-PROGRAMDATA = C:\ProgramData
-# default
-SHELL := sh.exe
-# environment
-HOMEPATH = \
-# default
-MAKECMDGOALS := all
-# environment
-DRIVERDATA = C:\Windows\System32\Drivers\DriverData
-# environment
-COMSPEC = C:\WINDOWS\system32\cmd.exe
+SHELL := /bin/sh
 # environment
 WINDIR = C:\WINDOWS
 # environment
-MAKELEVEL := 0
-# default
-MAKE = $(MAKE_COMMAND)
+VSCODE_NLS_CONFIG = {"locale":"nl","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from `Makefile', line 6)
+CFLAGS = -Wall -g -Wextra -lm
 # environment
-PATH = C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\baljanj\AppData\Local\Microsoft\WindowsApps;;C:\Users\baljanj\AppData\Local\Programs\Microsoft VS Code\bin;C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin;
+ONEDRIVE = C:\Users\janba\OneDrive
+# makefile (from `Makefile', line 8)
+LACG = lacg.c
 # environment
-COMPUTERNAME = LB1804013
-# default
-MAKEFILES := 
-# automatic
-^F = $(notdir $^)
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # environment
-PROMPT = $P$G
+TMP = /tmp
 # environment
-CHOCOLATEYLASTPATHUPDATE = 132954495725151301
-# makefile (from 'Makefile', line 3)
-IN = la.c main.c
-# environment
-LOGONSERVER = \\S002
-# environment
-VSCODE_LOG_NATIVE = false
-# environment
-USERNAME = baljanj
-# environment
-HOMESHARE = \\s261\home1\Fac_overhead\AICT\baljanj
-# environment
-COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
-# automatic
-?F = $(notdir $?)
+VSCODE_VERBOSE_LOGGING = true
 # environment
 PROGRAMW6432 = C:\Program Files
 # environment
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
-# automatic
-+F = $(notdir $+)
+PROGRAMDATA = C:\ProgramData
+# makefile (from `Makefile', line 9)
+LA = la.c
 # environment
-ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-68ff2158-8be3-4939-91d0-d2f5ffd92ce3-sock
 # environment
-USERDOMAIN = HSZUYD
-# 'override' directive
-GNUMAKEFLAGS := 
+VSCODE_CWD = C:\Users\janba\AppData\Local\Programs\Microsoft VS Code
 # environment
-OS = Windows_NT
-# makefile
-.DEFAULT_GOAL := default
-# default
-MAKE_VERSION := 4.3
+PATH = /c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/WINDOWS/System32/OpenSSH/:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Git/cmd:/c/Program Files/Docker/Docker/resources/bin:/c/ProgramData/DockerDesktop/version-bin:/c/Program Files/nodejs/:/c/Program Files/dotnet/:/mingw/bin:/usr/bin:/c/Users/janba/AppData/Local/Microsoft/WindowsApps:/c/Users/janba/AppData/Local/Programs/Microsoft VS Code/bin:/usr/bin:/mingw/bin:/c/Users/janba/AppData/Roaming/npm:/c/Users/janba/.dotnet/tools:.
+# makefile (from `Makefile', line 3)
+MAT = mat
 # environment
-PROGRAMFILES(X86) = C:\Program Files (x86)
-# environment
-UATDATA = C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
-# environment
-USERDOMAIN_ROAMINGPROFILE = HSZUYD
-# environment
-NUMBER_OF_PROCESSORS = 4
-# environment
-PUBLIC = C:\Users\Public
-# environment
-APPDATA = C:\Users\baljanj\AppData\Roaming
-# makefile (from 'Makefile', line 2)
-CFLAGS = -Wall -g -Wextra -lm
-# environment
-HOMEDRIVE = G:
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
 PROCESSOR_ARCHITECTURE = x86
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+USERPROFILE = C:\Users\janba
+# makefile (from `Makefile', line 12)
+IN_MAT = $(SRC)$(MAT).c
 # environment
-COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
-# environment
-ELECTRON_RUN_AS_NODE = 1
-# environment
-TEMP = C:\Users\baljanj\AppData\Local\Temp
-# environment
-VSCODE_IPC_HOOK = \\.\pipe\0efefbf4bc1ac3a70f4fa1396cb4405c-1.67.2-main-sock
-# default
-.RECIPEPREFIX := 
-# automatic
-<F = $(notdir $<)
-# makefile (from 'Makefile', line 4)
-OUT = -o out
-# default
-SUFFIXES := 
+!C: = c:\Users\janba\C-dev\Linear_Algebra
 # environment
 ALLUSERSPROFILE = C:\ProgramData
 # environment
-SESSIONNAME = Console
+VSCODE_LOG_STACK = false
+# environment
+NUMBER_OF_PROCESSORS = 16
+# environment
+ELECTRON_RUN_AS_NODE = 1
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# automatic
+%F = $(notdir $%)
 # environment
-PROCESSOR_REVISION = 8e09
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_19452_KRCJHNHZHZLCLCED
 # environment
-DEFLOGDIR = C:\ProgramData\McAfee\Endpoint Security\Logs
-# makefile (from 'Makefile', line 1)
+VSCODE_PIPE_LOGGING = true
+# environment
+COMPUTERNAME = DESKTOP-3AAR4JN
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERNAME = janba
+# environment
+PUBLIC = C:\Users\Public
+# makefile (from `Makefile', line 2)
+PRP = prp
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\janba\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environment
+LOGONSERVER = \\DESKTOP-3AAR4JN
+# environment
+ONEDRIVECONSUMER = C:\Users\janba\OneDrive
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+USERDOMAIN = DESKTOP-3AAR4JN
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from `Makefile', line 11)
+IN_PRP = $(SRC)$(PRP).c
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 5)
 CC = gcc
+# default
+MAKE_VERSION := 3.81
+# makefile
+.DEFAULT_GOAL := prp
 # environment
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LOCALAPPDATA = C:\Users\janba\AppData\Local
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := make.exe
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
+# environment
+OS = Windows_NT
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\37406f71a663a7ded3962ec94234e7b6-1.67.2-main-sock
+# environment
+HOMEPATH = \
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+PROMPT = $P$G
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+ 
+# environment
+SYSTEMROOT = C:\WINDOWS
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+APPDATA = C:\Users\janba\AppData\Roaming
+# environment
+TEMP = /tmp
+# environment
+COMSPEC = C:\WINDOWS\system32\cmd.exe
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SYSTEMDRIVE = C:
+# environment
+SESSIONNAME = Console
+# environment
+PROCESSOR_REVISION = 7100
+# default
+.INCLUDE_DIRS = /usr/include /usr/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+PROCESSOR_LEVEL = 23
+# environment
+TERM = cygwin
+# environment
+VSCODE_PID = 19452
+# environment
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-3AAR4JN
 # variable set hash-table stats:
-# Load=107/1024=10%, Rehash=0, Collisions=10/134=7%
+# Load=99/1024=10%, Rehash=0, Collisions=11/124=9%
 
 # Pattern-specific Variable Values
 
@@ -235,9 +223,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
 
 # Directories
 
-# . (key d:/users/baljanj/OneDrive - Zuyd Hogeschool/Dev/Linear_Algebra, mtime 1653051627): 12 files, no impossibilities.
+# . (device -13143, inode 781207): 15 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -245,27 +233,47 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
 
 # Files
 
-default:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
+# Not a target:
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 7):
-	$(CC) $(IN) $(OUT) $(CFLAGS)
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-debug:
+# Not a target:
+.SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 10):
-	$(CC) $(IN) $(OUT) $(CFLAGS)
-	./out
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-20 14:29:50
+#  Last modified 2022-05-30 14:43:52
 #  File has been updated.
 #  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+run_prp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 18):
+	$(CC) $(LACG) $(IN_PRP) -o $(PRP) $(CFLAGS)
+	./$(PRP)
+	
+
+run_mat:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 25):
+	$(CC) $(LA) $(IN_MAT) -o $(MAT) $(CFLAGS)
+	./$(MAT)
+	
 
 # Not a target:
 .DEFAULT:
@@ -273,28 +281,35 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-all:
-#  Command line target.
-#  Implicit rule search has been done.
-#  File does not exist.
+prp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 15):
+	$(CC) $(LACG) $(IN_PRP) -o $(PRP) $(CFLAGS)
+	
 
-# 
- files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/16=0%
+mat:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 22):
+	$(CC) $(LA) $(IN_MAT) -o $(MAT) $(CFLAGS)
+	
+
+# files hash-table stats:
+# Load=8/1024=1%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
-# No 'vpath' search paths.
+# No `vpath' search paths.
 
-# No general ('VPATH' variable) search path.
+# No general (`VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 118 B / avg = 6 B
-# current buf: size = 8174 B / used = 118 B / count = 17 / avg = 6 B
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# strcache performance: lookups = 23 / hit rate = 26%
-# hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=0/23=0%
-# Finished Make data base on Tue May 24 15:56:33 2022
+# Finished Make data base on Mon May 30 14:47:54 2022
 
  

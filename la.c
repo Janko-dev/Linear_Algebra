@@ -163,3 +163,58 @@ Matrix* transpose(Matrix* mat){
     }
     return res;
 }
+
+Matrix* copy_mat(Matrix* mat){
+    Matrix* res = create_mat(mat->m, mat->n);
+    for (int i = 0; i < mat->m; i++){
+        for (int j = 0; j < mat->n; j++){
+            res->data[i][j] = mat->data[i][j];
+        }   
+    }
+    return res;
+}
+
+Vector* copy_vec(Vector* vec){
+    Vector* res = create_vec(vec->n);
+    for (int i = 0; i < vec->n; i++) res->data[i] = vec->data[i];
+    return res;
+}
+
+Vector* cross_prod(Vector* a, Vector* b){
+    if (a->n != 3 || b->n != 3){
+        fprintf(stderr, "ERROR: vectors must be of length 3\n");
+        exit(1);
+    }
+    Vector* res = create_vec(3);
+    res->data[0] = a->data[1] * b->data[2] - a->data[2] * b->data[1];
+    res->data[1] = a->data[2] * b->data[0] - a->data[0] * b->data[2];
+    res->data[2] = a->data[0] * b->data[1] - a->data[1] * b->data[0];
+    return res;
+}
+
+// Gaussian elimination of matrix and vector to get row echelon form
+Matrix* gaussian_row_echelon(Matrix* mat, Vector* vec){
+    if (vec->n != mat->m){
+        fprintf(stderr, "ERROR: lenth of vector should equal rows of matrix\n");
+        exit(1);
+    }
+
+    Matrix* res = create_mat(mat->m, mat->n+1);
+    for (int i = 0; i < mat->m; i++){
+        for (int j = 0; j < mat->n; j++){
+            res->data[i][j] = mat->data[i][j];
+        }   
+    }
+    for (int i = 0; i < vec->n; i++) res->data[i][res->n-1] = vec->data[i];
+    print_mat(res);
+
+    for (int k = 0; k < res->n; k++){
+        for (int i = k+1; i < res->m; i++){
+            float val = res->data[i][k]/res->data[k][k];
+            for (int j = k; j < res->n; j++){
+                res->data[i][j] -= res->data[k][j] * val;
+            }
+        }
+    }
+    return res;
+}
