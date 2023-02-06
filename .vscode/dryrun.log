@@ -1,5 +1,5 @@
-make.exe --dry-run --keep-going --print-directory
+make.exe --dry-run --always-make --keep-going --print-directory
 make.exe: Entering directory `/c/Users/janba/C-dev/Linear_Algebra'
-make.exe: `prp' is up to date.
+gcc lacg.c examples/prp.c -o prp -Wall -g -Wextra -lm
 make.exe: Leaving directory `/c/Users/janba/C-dev/Linear_Algebra'
  

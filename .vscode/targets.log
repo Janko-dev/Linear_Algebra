@@ -10,7 +10,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 make.exe: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon May 30 14:47:54 2022
+# Make data base, printed on Mon Feb  6 10:51:13 2023
 
 # Variables
 
@@ -18,13 +18,10 @@ make.exe: *** No rule to make target `all'.  Stop.
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
- 
 # makefile (from `Makefile', line 1)
 SRC = examples/
 # makefile
 MAKEFLAGS = Rrqp
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -42,7 +39,9 @@ SHELL := /bin/sh
 # environment
 WINDIR = C:\WINDOWS
 # environment
-VSCODE_NLS_CONFIG = {"locale":"nl","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # makefile (from `Makefile', line 6)
 CFLAGS = -Wall -g -Wextra -lm
 # environment
@@ -50,13 +49,13 @@ ONEDRIVE = C:\Users\janba\OneDrive
 # makefile (from `Makefile', line 8)
 LACG = lacg.c
 # environment
+LIBJABRA_TRACE_LEVEL = debug
+# environment
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
 TMP = /tmp
-# environment
-VSCODE_VERBOSE_LOGGING = true
 # environment
 PROGRAMW6432 = C:\Program Files
 # environment
@@ -64,15 +63,15 @@ PROGRAMDATA = C:\ProgramData
 # makefile (from `Makefile', line 9)
 LA = la.c
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-68ff2158-8be3-4939-91d0-d2f5ffd92ce3-sock
+VSCODE_CWD = C:\Users\janba\C-dev\Linear_Algebra
 # environment
-VSCODE_CWD = C:\Users\janba\AppData\Local\Programs\Microsoft VS Code
-# environment
-PATH = /c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/WINDOWS/System32/OpenSSH/:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Git/cmd:/c/Program Files/Docker/Docker/resources/bin:/c/ProgramData/DockerDesktop/version-bin:/c/Program Files/nodejs/:/c/Program Files/dotnet/:/mingw/bin:/usr/bin:/c/Users/janba/AppData/Local/Microsoft/WindowsApps:/c/Users/janba/AppData/Local/Programs/Microsoft VS Code/bin:/usr/bin:/mingw/bin:/c/Users/janba/AppData/Roaming/npm:/c/Users/janba/.dotnet/tools:.
+PATH = /c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/WINDOWS/System32/OpenSSH/:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Git/cmd:/c/Program Files/Docker/Docker/resources/bin:/c/ProgramData/DockerDesktop/version-bin:/c/Program Files/nodejs/:/mingw/bin:/usr/bin:/c/Program Files/Git LFS:/c/Users/janba/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.9:/c/Program Files/dotnet/:/c/Program Files/PuTTY/:/c/Users/janba/Dev/i686-w64-mingw32/bin:/c/Users/janba/AppData/Local/Programs/Python/Python311/Scripts/:/c/Users/janba/AppData/Local/Programs/Python/Python311/:/c/Users/janba/.cargo/bin:/c/Users/janba/AppData/Local/Microsoft/WindowsApps:/c/Users/janba/AppData/Local/Programs/Microsoft VS Code/bin:/usr/bin:/mingw/bin:/c/Users/janba/AppData/Roaming/npm:/c/Program Files (x86)/Dr. Memory/bin/:/c/Program Files/JetBrains/IntelliJ IDEA Community Edition 2022.2.1/bin:.:/c/Users/janba/.dotnet/tools:/c/ffmpeg/bin:/c/Users/janba/AppData/Local/Programs/MiKTeX/miktex/bin/x64/
 # makefile (from `Makefile', line 3)
 MAT = mat
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# environment
+GIT_LFS_PATH = C:\Program Files\Git LFS
 # environment
 PROCESSOR_ARCHITECTURE = x86
 # environment
@@ -84,8 +83,6 @@ IN_MAT = $(SRC)$(MAT).c
 # environment
 ALLUSERSPROFILE = C:\ProgramData
 # environment
-VSCODE_LOG_STACK = false
-# environment
 NUMBER_OF_PROCESSORS = 16
 # environment
 ELECTRON_RUN_AS_NODE = 1
@@ -94,9 +91,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_19452_KRCJHNHZHZLCLCED
-# environment
-VSCODE_PIPE_LOGGING = true
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\LOCAL\crashpad_18592_REOKJERSXDLURVXY
 # environment
 COMPUTERNAME = DESKTOP-3AAR4JN
 # environment
@@ -114,7 +109,7 @@ PRP = prp
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\janba\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = C:\Users\janba\AppData\Roaming\Code\CachedData\e2816fe719a4026ffa1ee0189dc89bdfdbafb164
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -122,11 +117,17 @@ COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
 # environment
 LOGONSERVER = \\DESKTOP-3AAR4JN
 # environment
+KINECTSDK10_DIR = C:\Program Files\Microsoft SDKs\Kinect\v1.8\
+# environment
 ONEDRIVECONSUMER = C:\Users\janba\OneDrive
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
 USERDOMAIN = DESKTOP-3AAR4JN
+# environment
+MIC_LD_LIBRARY_PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic
+# environment
+INTELLIJ IDEA COMMUNITY EDITION = C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin;
 # default
 MAKE = $(MAKE_COMMAND)
 # makefile (from `Makefile', line 11)
@@ -160,7 +161,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\37406f71a663a7ded3962ec94234e7b6-1.67.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\37406f71a663a7ded3962ec94234e7b6-1.75.0-main-sock
 # environment
 HOMEPATH = \
 # environment
@@ -171,7 +172,10 @@ PROMPT = $P$G
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
- 
+# environment
+PT8HOME = C:\Program Files\Cisco Packet Tracer 8.2.0
+# environment
+INTEL_DEV_REDIST = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
 # environment
 SYSTEMROOT = C:\WINDOWS
 # automatic
@@ -211,11 +215,12 @@ PROCESSOR_LEVEL = 23
 # environment
 TERM = cygwin
 # environment
-VSCODE_PID = 19452
+VSCODE_PID = 18592
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-3AAR4JN
 # variable set hash-table stats:
-# Load=99/1024=10%, Rehash=0, Collisions=11/124=9%
+ 
+# Load=102/1024=10%, Rehash=0, Collisions=11/127=9%
 
 # Pattern-specific Variable Values
 
@@ -310,6 +315,6 @@ mat:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon May 30 14:47:54 2022
+# Finished Make data base on Mon Feb  6 10:51:13 2023
 
  

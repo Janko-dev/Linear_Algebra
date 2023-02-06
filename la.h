@@ -25,21 +25,21 @@ void print_vec(Vector* vector);
 Vector* prod_mat_vec(Matrix* mat, Vector* vec);
 Matrix* prod_mat(Matrix* A, Matrix* B);
 // Scale 
-Vector* scale_vec(Vector* vec, float scalar);
-Matrix* scale_mat(Matrix* mat, float scalar);
+void scale_vec(Vector* vec, float scalar);
+void scale_mat(Matrix* mat, float scalar);
 // Apply function to members
-Vector* apply_vec(Vector* vec, float(*func)(float));
-Matrix* apply_mat(Matrix* vec, float(*func)(float));
+void apply_vec(Vector* vec, float(*func)(float));
+void apply_mat(Matrix* vec, float(*func)(float));
 // Convert 
 Matrix* vec_to_mat(Vector* vec);
 Vector* mat_to_vec(Matrix* mat);
 // Randomize values of matrix between min and max 
-Matrix* randomize(Matrix* mat, float min, float max);
+void randomize(Matrix* mat, float min, float max);
 // Transpose Matrix
-Matrix* transpose(Matrix* mat);
+void transpose(Matrix* mat);
 // Hard copy 
-Matrix* copy_mat(Matrix* mat); 
-Vector* copy_vec(Vector* vec); 
+Matrix* copy_mat(Matrix* src); 
+Vector* copy_vec(Vector* src); 
 // Cross product of vectors
 Vector* cross_prod(Vector* a, Vector* b);
 // Gaussian elimination of matrix and vector to get row echelon form

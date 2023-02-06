@@ -17,19 +17,22 @@ long int convert(char* x){
 
 int main(int argc, char** argv){
 
-    if (argc != 3){
-        fprintf(stderr, "ERROR: Supply a whole number for the amount of rows and columns of the matrix.\n");
-        exit(1);
-    }
+    // if (argc != 3){
+    //     fprintf(stderr, "ERROR: Supply a whole number for the amount of rows and columns of the matrix.\n");
+    //     exit(1);
+    // }
 
-    int m = convert(argv[1]);
-    int n = convert(argv[2]);
+    // int m = convert(argv[1]);
+    // int n = convert(argv[2]);
 
-    printf("Matrix of size (%2d, %2d)\n---------------------\n", m, n);
+    // printf("Matrix of size (%2d, %2d)\n---------------------\n", m, n);
 
-    Matrix* mat = create_mat(m, n);
-    randomize(mat, 0, 100);
+    // Matrix* mat = create_mat(m, n);
+    // randomize(mat, 0, 100);
+    // print_mat(mat);
+
+    Matrix* mat = create_mat(4, 3);
+    randomize(mat, 10.0, 20.0);
     print_mat(mat);
-
     return 0;
 }

@@ -89,33 +89,29 @@ Matrix* prod_mat(Matrix* A, Matrix* B){
 }
 
 // scale matrix/vector
-Vector* scale_vec(Vector* vec, float scalar){
+void scale_vec(Vector* vec, float scalar){
     for (int i = 0; i < vec->n; i++) vec->data[i] *= scalar;
-    return vec;
 }
 
-Matrix* scale_mat(Matrix* mat, float scalar){
+void scale_mat(Matrix* mat, float scalar){
     for (int i = 0; i < mat->m; i++) {
         for (int j = 0; j < mat->n; j++) {
             mat->data[i][j] *= scalar;
         }
     }
-    return mat;
 }
 
 // apply function to matrix/vector
-Vector* apply_vec(Vector* vec, float(*func)(float)){
+void apply_vec(Vector* vec, float(*func)(float)){
     for (int i = 0; i < vec->n; i++) vec->data[i] = func(vec->data[i]);
-    return vec;
 }
 
-Matrix* apply_mat(Matrix* mat, float(*func)(float)){
+void apply_mat(Matrix* mat, float(*func)(float)){
     for (int i = 0; i < mat->m; i++) {
         for (int j = 0; j < mat->n; j++) {
             mat->data[i][j] = func(mat->data[i][j]);
         }
     }
-    return mat;
 }
 
 // Convert vector to matrix and matrix to vector
@@ -140,7 +136,7 @@ Vector* mat_to_vec(Matrix* mat){
 }
 
 // Randomize matrix
-Matrix* randomize(Matrix* mat, float min, float max){
+void randomize(Matrix* mat, float min, float max){
     if (min > max){
         fprintf(stderr, "ERROR: min %f must be smaller than max %f\n", min, max);
         exit(1);
@@ -150,26 +146,26 @@ Matrix* randomize(Matrix* mat, float min, float max){
             mat->data[i][j] = (max-min) * ((float)rand()/(float)RAND_MAX) + min;
         }
     }
-    return mat;
 }
 
 // Transpose matrix
-Matrix* transpose(Matrix* mat){
+void transpose(Matrix* mat){
     Matrix* res = create_mat(mat->n, mat->m);
     for (int i = 0; i < res->m; i++){
         for (int j = 0; j < res->n; j++){
             res->data[i][j] = mat->data[j][i];
         }    
     }
-    return res;
+    free_mat(mat);
+    mat = res;
 }
 
-Matrix* copy_mat(Matrix* mat){
-    Matrix* res = create_mat(mat->m, mat->n);
-    for (int i = 0; i < mat->m; i++){
-        for (int j = 0; j < mat->n; j++){
-            res->data[i][j] = mat->data[i][j];
-        }   
+Matrix* copy_mat(Matrix* src){
+    Matrix* res = create_mat(src->m, src->n);
+    for (int i = 0; i < src->m; i++){
+        for (int j = 0; j < src->n; j++){
+            res->data[i][j] = src->data[i][j];
+        }
     }
     return res;
 }
